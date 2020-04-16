@@ -4,19 +4,19 @@ class Pangram {
 
     // TODO: Complete the following function
     fun getResult(inputString: String): String {
-        throw NotImplementedError("Not implemented")
-/*      var words = inputString.split(" ").toMutableList()
+       // throw NotImplementedError("Not implemented")
+        var words = inputString.split(" ").toMutableList()
         var i=0
         var j=0
         var x = 0
         var g = 0
         val arr = charArrayOf('a', 'e', 'i', 'o', 'u', 'y')
 
-        while (i < words.size-1) {
+        while (i < words.size) {
             while (x < words[i].length) {
                 while (j < arr.size) {
                     if (arr[j] in words[i]) {
-                        var a = words[i].replace(arr[j], arr[j].toUpperCase())
+                        val a = words[i].replace(arr[j], arr[j].toUpperCase())
                         words[i] = a
                         g++
                         x++
@@ -26,15 +26,17 @@ class Pangram {
                         x++
                     }
                 }
-                var b=g.toString()+words[i]
+                val b=g.toString()+words[i]
                 words[i]=b
-                i++
+
                 j = 0
-                g = 0
+                break
             }
+            i++
             x = 0
+            g = 0
         }
-        var result = words
-        return result.joinToString (" ")*/
+        val result = words.sortedBy { it[0] }
+        return result.joinToString (" ")
     }
 }
